@@ -4,7 +4,7 @@ from sys import stderr
 import time
 from time import sleep
 
-from ev3dev2.motor import LargeMotor, MoveTank, OUTPUT_B, OUTPUT_C
+from ev3dev2.motor import LargeMotor, MoveTank, OUTPUT_B, OUTPUT_C, OUTPUT_A, OUTPUT_D
 from ev3dev2.sensor.lego import ColorSensor, GyroSensor
 from ev3dev2.sensor import INPUT_1, INPUT_2, INPUT_3, INPUT_4
 from ev3dev2.button import Button
@@ -20,6 +20,8 @@ motorDirection = 1
 
 motorB = LargeMotor(OUTPUT_B)
 motorC = LargeMotor(OUTPUT_C)
+motorA = LargeMotor(OUTPUT_B)
+ 
 
 
 timer = time

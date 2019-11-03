@@ -4,7 +4,7 @@ kp = 0.1
 optimal = 50
 
 kWiggle = 0.7
-kUp = 0.5
+kUp = 0.85
 kDown = 0.5
 
 

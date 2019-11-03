@@ -13,15 +13,15 @@ from util import constants
 
 import traceback
 
-from missions import craneyBoi, elevatorWhee, showGyro, calibration, testoPesto
+from missions import craneyBoi, trafficJam, showGyro, calibration, testoPesto
 
 # The Sound class creates a new instance that is assigned to the variable created.
 soundGenerator = Sound()
 buttonListener = Button()
 
 selectedProgram = 0
-missionNames = ["craneyBoi", "elevatorWhee", "showGyro", "calibration", "testoPesto"]
-missions = [craneyBoi, elevatorWhee, showGyro, calibration, testoPesto]
+missionNames = ["craneyBoi", "trafficJam", "showGyro", "calibration", "testoPesto"]
+missions = [craneyBoi, trafficJam, showGyro, calibration, testoPesto]
 numMissions = len(missionNames)
 
 
@@ -64,12 +64,8 @@ buttonListener.on_enter = enter
 
 soundGenerator.beep()
 
+#robot.init()
 
-#calibration.run()
-
-robot.init()
-
-#craneyBoi.run()
 
 print(missionNames[selectedProgram])
 while True:

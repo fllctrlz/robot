@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 from sys import stderr
 from time import sleep
 
@@ -15,4 +16,4 @@ def run():
     gyroTurn.run(20, 40, 1)
     zMove.run(-20, 1, 1, distance, robot.motorB, 840)
     zMove.run(-5, 1, 1, distance, robot.motorB, 200)
-    zMove.run(100, 1, 1, distance, robot.motorB, 2000, startPower = 50)
+    zMove.run(100, 0.91, 1, distance, robot.motorB, 2000, startPower = 50)
