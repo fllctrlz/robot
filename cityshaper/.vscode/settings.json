@@ -1,0 +1,8 @@
+{
+    "files.eol": "\n",
+    "ev3devBrowser.download.exclude": "{**/.*,LICENSE,README.md}",
+    "terminal.integrated.shell.windows": "cmd.exe",
+    "python.pythonPath": "/Users/alexiev/anaconda3/bin/python",
+    "python.linting.enabled": false,
+    "python.formatting.provider": "black"
+}
