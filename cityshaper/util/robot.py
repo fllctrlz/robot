@@ -20,7 +20,7 @@ motorDirection = 1
 
 motorB = LargeMotor(OUTPUT_B)
 motorC = LargeMotor(OUTPUT_C)
-motorA = LargeMotor(OUTPUT_B)
+motorD = LargeMotor(OUTPUT_D)
  
 
 

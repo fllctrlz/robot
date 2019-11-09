@@ -11,4 +11,4 @@ from movements import squareUp, pidLineFollower, zMove, gearLash, zPivot, follow
 
 def run():
    zMove.run(-80, 1, 1, distance, robot.motorB, 1250, 0, 950)
-   robot.motorA.on_for_degrees(speed=80, degrees=240)
+   robot.motorD.on_for_degrees(speed=80, degrees=240)
