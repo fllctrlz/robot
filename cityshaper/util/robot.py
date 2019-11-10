@@ -21,7 +21,8 @@ motorDirection = 1
 motorB = LargeMotor(OUTPUT_B)
 motorC = LargeMotor(OUTPUT_C)
 motorD = LargeMotor(OUTPUT_D)
- 
+
+soundGenerator = Sound()
 
 
 timer = time
@@ -99,9 +100,27 @@ def getIndexFromSensor(sensor):
 
 def init():
     initCalibration()
+    testGyroDrift()
 
 def afterMission():
     driveBase.stop()
 
 def safeMotorsOn(powerB, powerC):
     driveBase.on(min(100,max(powerB, -100)), min(100,max(powerC, -100)))
+
+def testGyroDrift():
+    firstRead = getAngle()
+    print("checking for gyro drift")
+    sleep(2)
+     
+    if firstRead != getAngle():
+        print("gyro is drifting")
+        soundGenerator.beep()
+        sleep(3)
+        raise Exception ("gyro is drifting")
+        sleep(2)
+    print ("No drift")
+    sleep(2)
+     
+def beep():
+    soundGenerator.beep()

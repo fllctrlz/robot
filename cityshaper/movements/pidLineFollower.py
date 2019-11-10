@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #TODO add derivative
-from time import time 
+from time import time
 
 from util import robot
 from util import constants
