@@ -11,8 +11,10 @@ from movements import squareUp, pidLineFollower, zMove, gearLash, zPivot, follow
 
 def run():
    zMove.run(-50, 1, 1, distance, robot.motorB, 1300, 0, 950)
-   robot.motorD.on_for_degrees(speed=40, degrees=300)
+   robot.motorD.on_for_degrees(speed=40, degrees=320)
    gyroTurn.run(30, 40, -1)
-   zMove.run(50, 1, 1, distance, robot.motorB, 250, 0, 100)
-   robot.beep()
-   zPivot.run(40, motorB, light, robot.BACK_LEFT, 150, 0, 100)
+   zMove.run(50, 1, 1, distance, robot.motorB, 170, 0, 100)
+   gyroTurn.run(50, 50, 1)
+   zMove.run(-70, 0.7, -1, distance, robot.motorB, 1200, 0, 1000)
+   pidLineFollower.run(30, robot.BACK_RIGHT, 1, distance, 2000)
+   
