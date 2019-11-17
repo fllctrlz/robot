@@ -16,8 +16,10 @@ def run():
     gyroTurn.run(20, 40, 1)
     #drives forward and uses gyro sensor to adjust to be straight on with the box
     zMove.run(-15, 1, 1, distance, robot.motorB, 780)
-    #pushes block forward and lowers crane arm
+    # pushes block forward and lowers crane arm
     zMove.run(-5, 1, 1, distance, robot.motorB, 200)
-    zMove.run(100, 0.91, 1, distance, robot.motorB, 2000, startPower = 50)
-    #drives back to base
+    zMove.run(100, 1, 1, distance, robot.motorB, 700, startPower = 50)
+    gyroTurn.run(90, 75, 1)
+    zMove.run(-100, 1, 1, distance, robot.motorB, 850, startPower = 60)
+    #drives back and turns into base
 

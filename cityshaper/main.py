@@ -52,7 +52,7 @@ def enter(pressed):
                 selectedProgram = selectedProgram + 1
         except:
             soundGenerator.beep()
-            robot.debug(traceback.print_exc())
+            #robot.debug(traceback.print_exc())
             print("EXCEPTION")
         robot.afterMission()
         print(missionNames[selectedProgram])
@@ -64,7 +64,7 @@ buttonListener.on_enter = enter
 
 soundGenerator.beep()
 
-robot.init()
+#robot.init()
 
 #trafficJam.run()
 
