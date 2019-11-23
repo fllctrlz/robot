@@ -90,7 +90,22 @@ def initCalibration():
 def calibratedValue(sensor):
     index = getIndexFromSensor(sensor)
     rawValue = sensors[index].reflected_light_intensity
-    return 100.0 * (rawValue - calibrationMin[index]) / (calibrationMax[index] - calibrationMin[index])
+    calibratedValue = 100.0 * (rawValue - calibrationMin[index]) / (calibrationMax[index] - calibrationMin[index])
+    if calibratedValue > 99:
+        return 99
+    
+    if calibratedValue < 1:
+        return 1
+    
+    return calibratedValue
+
+def printSensors():
+    debug("BACK_LEFT")
+    debug(calibratedValue(BACK_LEFT))
+    debug("BACK_RIGHT")
+    debug(calibratedValue(BACK_RIGHT))
+    debug("FRONT")
+    debug(calibratedValue(FRONT))
 
 def getIndexFromSensor(sensor):
     for i in range (len(sensors)):
@@ -111,16 +126,14 @@ def safeMotorsOn(powerB, powerC):
 def testGyroDrift():
     firstRead = getAngle()
     print("checking for gyro drift")
-    sleep(2)
+    sleep(1)
      
-    if firstRead != getAngle():
+    if abs(firstRead - getAngle()) > 1:
         print("gyro is drifting")
         soundGenerator.beep()
-        sleep(3)
         raise Exception ("gyro is drifting")
         sleep(2)
     print ("No drift")
-    sleep(2)
      
 def beep():
     soundGenerator.beep()

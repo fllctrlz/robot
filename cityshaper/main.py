@@ -64,11 +64,12 @@ buttonListener.on_enter = enter
 
 soundGenerator.beep()
 
-#robot.init()
+robot.init()
 
-#trafficJam.run()
+trafficJam.run()
 
 print(missionNames[selectedProgram])
 while True:
     buttonListener.process()
+    robot.printSensors()
     sleep(0.1)
