@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-kp = 0.1
+kp = 0.08
 optimal = 50
 
 kWiggle = 0
