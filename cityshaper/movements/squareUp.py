@@ -22,12 +22,12 @@ def run(startPower, duration, side = 1):
         currentPower = startPower - elapsedTime * powerDecay
         currentPower = currentPower * side
     
-        if robot.calibratedValue(robot.FRONT_LEFT) > 50:
+        if robot.calibratedValue(robot.BACK_LEFT) > 50:
             robot.motorB.on(currentPower)
         else:
             robot.motorB.on(-currentPower)
 
-        if robot.calibratedValue(robot.FRONT_RIGHT) > 50:
+        if robot.calibratedValue(robot.BACK_RIGHT) > 50:
             robot.motorC.on(currentPower)
         else:
             robot.motorC.on(-currentPower)
