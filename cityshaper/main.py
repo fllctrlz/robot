@@ -66,7 +66,8 @@ soundGenerator.beep()
 
 robot.init()
 
-redCircle.run()
+trafficJam.run()
+
 
 print(missionNames[selectedProgram])
 while True:

@@ -119,6 +119,7 @@ def init():
 
 def afterMission():
     driveBase.stop()
+    motorD.off(brake=False)
 
 def safeMotorsOn(powerB, powerC):
     driveBase.on(min(100,max(powerB, -100)), min(100,max(powerC, -100)))
