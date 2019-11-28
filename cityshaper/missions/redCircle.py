@@ -10,7 +10,7 @@ from util.exitConditions import distance, time, light
 
 from movements import squareUp, pidLineFollower, zMove, gearLash, zPivot, followWall, gyroTurn
 
-soundGenerator = Sound()
+
 
 def run():
     zMove.run(100, 1, 1, distance, robot.motorB, 1850, slowDownDistance=1000)
