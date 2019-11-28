@@ -53,7 +53,7 @@ def enter(pressed):
         except:
             soundGenerator.beep()
             #robot.debug(traceback.print_exc())
-            print("EXCEPTION")
+            robot.debug("EXCEPTION")
         robot.afterMission()
         print(missionNames[selectedProgram])
 
@@ -66,7 +66,7 @@ soundGenerator.beep()
 
 robot.init()
 
-redCircle.run()
+#redCircle.run()
 
 
 print(missionNames[selectedProgram])
@@ -74,3 +74,4 @@ while True:
     buttonListener.process()
     robot.printSensors()
     sleep(0.1)
+    robot.debug("x")

@@ -12,19 +12,23 @@ from movements import squareUp, pidLineFollower, zMove, gearLash, zPivot, follow
 
 soundGenerator = Sound()
 
+
+
 def run():
    #Traffic Jam Mission
    zMove.run(-50, 1, 1, distance, robot.motorB, 1300, 0, 950)
-   robot.motorD.on_for_degrees(speed=40, degrees=160)
+   robot.motorD.on_for_degrees(speed=30, degrees=165)
    zPivot.run(-45, robot.motorB, time, robot.timer, 1.4)
    #Swing Mission
    zMove.run(50, 1, 1, distance, robot.motorB, 350)
-   gyroTurn.run(47, 35, 1)
-   zMove.run(-30, 1, 1, light, robot.BACK_RIGHT, 80, 100)
-   zMove.run(-30, 1, 1, light, robot.BACK_RIGHT, 0, 15)
-   zMove.run(-30, 1, 1, light, robot.BACK_RIGHT, 80, 100)
+   gyroTurn.run(50, 35, 1)
+   zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 80, 100)
+   zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 0, 15)
+   zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 80, 100)
    sleep(0.25)
-   pidLineFollower.run(-25, robot.BACK_RIGHT, 1, distance, robot.motorB, 400, kp=0.1)
+   gyroTurn.run(10, 10, -1)
+   robot.sleep(3)
+   pidLineFollower.run(-10, robot.BACK_RIGHT, 1, distance, robot.motorB, 400)
    pidLineFollower.run(-25, robot.BACK_RIGHT, 1, distance, robot.motorB, 300)
    zMove.run(-50, 1, 1, light, robot.BACK_LEFT, 85, 100)
    sleep(0.25)
@@ -35,7 +39,7 @@ def run():
    gyroTurn.run(80, 25, 1)
    zMove.run(-50, 1, 1, distance, robot.motorB, 300)
    zMove.run(-25, 1, 1, light, robot.BACK_LEFT, 85, 100)
-   gyroTurn.run(10, 25, 1)
+   gyroTurn.run(16, 25, 1)
    robot.motorD.on_for_degrees(speed=60, degrees=440)
    zMove.run(-50, 1, 1, distance, robot.motorB, 185)
    robot.motorD.on_for_degrees(speed=60, degrees=-440)
@@ -51,7 +55,6 @@ def run():
    #Back to Base
    zMove.run(60, 1, 1, distance, robot.motorB, 450)
    gyroTurn.run(70, 30, -1)
-   zMove.run(100, 1, 1, distance, robot.motorB, 1600)
+   zMove.run(100, 1, 1, distance, robot.motorB, 1600, kUp=10.0)
    gyroTurn.run(30, 30, -1)
    zMove.run(100, 1, 1, distance, robot.motorB, 3990, startPower=50, kUp=50.0)
-   

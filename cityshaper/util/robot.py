@@ -14,6 +14,8 @@ from missions import calibration
 
 from movements import squareUp, pidLineFollower, zMove, zPivot
 
+from util.exitConditions import time as timeLocal
+
 driveBase = MoveTank(OUTPUT_B, OUTPUT_C)
 
 motorDirection = 1
@@ -138,3 +140,8 @@ def testGyroDrift():
      
 def beep():
     soundGenerator.beep()
+
+
+def sleep(seconds):
+    while not timeLocal(timer, seconds, 0):
+        pass
