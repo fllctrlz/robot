@@ -13,12 +13,16 @@ from movements import squareUp, pidLineFollower, zMove, gearLash, zPivot, follow
 
 
 def run():
-    zMove.run(100, 1, 1, distance, robot.motorB, 1850, slowDownDistance=1000)
-    zMove.run(100, 1, 1, light, robot.FRONT, 85,100)
-    robot.motorD.on_for_degrees(speed=35, degrees=360)
+    zMove.run(100, 1, 1, distance, robot.motorB, 1850, slowDownDistance=1500, stop=False)
+    zMove.run(100, 1, 1, light, robot.FRONT, 85, 100)
+    robot.motorD.on_for_degrees(speed=-15, degrees=300)
     zMove.run(100, 1, 1, light, robot.BACK_LEFT, 85, 100)
     soundGenerator.beep()
     sleep(0.5) 
-    squareUp.run(30, 3, 1)
+    squareUp.run(20, 2, 1)
+    zMove.run(-50, 1, 1, distance, robot.motorB, 150)
     gyroTurn.run(95, 40, 1)
-    zMove.run(100, 1, 1, distance, robot.motorB, 2150)
+    robot.motorD.on_for_degrees(speed=50, degrees=600)
+    gyroTurn.run(185, 40, 1)
+    zMove.run(-100, 1, 1, distance, robot.motorB, 2200)
+    gyroTurn.run(90, 40, 1)
