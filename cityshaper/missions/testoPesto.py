@@ -18,7 +18,7 @@ def run():
     #pidLineFollower.run(20, robot.FRONT_LEFT, 1, distance, robot.motorB, 500)
     #pidLineFollower.run(-20, robot.BACK_LEFT, 1, time, robot.timer, 15)
     #pidLineFollower.run(20, robot.FRONT_LEFT, -1, light, robot.FRONT_RIGHT, 90, 100)
-    robot.sleep(69)
+    robot.sleep(60)
 
 
 def light():
