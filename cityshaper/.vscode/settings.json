@@ -2,7 +2,7 @@
     "files.eol": "\n",
     "ev3devBrowser.download.exclude": "{**/.*,LICENSE,README.md}",
     "terminal.integrated.shell.windows": "cmd.exe",
-    "python.pythonPath": "C:\\Users\\jhuang\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe",
+    "python.pythonPath": "C:\\Users\\hcazzin\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe",
     "python.linting.enabled": false,
     "python.formatting.provider": "black"
 }

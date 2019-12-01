@@ -6,10 +6,9 @@ from util import robot
 from util import constants
 
 def run(startPower, duration, side = 1):
-
     '''makes robot perpendicular to edge of black line. Starts at high power
      and moves each motor back then forward based on if the light sensor sees
-     greater or less than 50while decreasing the power, until the power is 0
+     greater or less than 50 while decreasing the power, until the power is 0
      and the duration is reached. The rate at which we deccelerate at is
      calculated by dividing our duration by the start power'''
 

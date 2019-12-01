@@ -1,0 +1,5 @@
+Add d and i to PID
+if the files don't exist, initialize the arrays' with 0 & 100 in calibration.readValues
+increase kWiggle to propper readValues
+remove turnDirection from zMoves
+finish gyro exit condition
