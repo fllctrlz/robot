@@ -19,12 +19,10 @@ def run():
     #pidLineFollower.run(-20, robot.BACK_LEFT, 1, time, robot.timer, 15)
     #pidLineFollower.run(20, robot.FRONT_LEFT, -1, light, robot.FRONT_RIGHT, 90, 100)
     
-
-
-def light():
-    text = (str(int(robot.calibratedValue(0))) + " " +
+    def light():
+        text = (str(int(robot.calibratedValue(0))) + " " +
         str(int(robot.calibratedValue(1))) + " " +
         str(int(robot.calibratedValue(2))) + " " + 
         str(int(robot.calibratedValue(3))))
-    print(text)
-    sleep(1)
+        print(text)
+        sleep(1)
