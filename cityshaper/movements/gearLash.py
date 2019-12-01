@@ -3,11 +3,12 @@ from util import robot
 from time import sleep
 from util.exitConditions import distance, time, light
 
-#This function moves the motors at a very low power for a short time in order to minimize the slippage
-#of the gears inside the motors. The direction parameter controls
+
 
 
 def run (direction, delay = 0.2, power = 5):
+    '''moves the motors at a very low power for a short time 
+    in order to minimize the slippage of the gears inside the motors'''
     robot.resetStartTime()
     robot.resetMotors()
     motorPower = power*direction*robot.motorDirection

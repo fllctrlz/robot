@@ -42,7 +42,6 @@ def run(targetPower, turn, turnDirection, condition, exitSensor, val1, val2 = 0,
             error = constants.kWiggle * (distanceB * turn - distanceC)
         powerB = currentPower - error
         powerC = currentPower + error
-        robot.debug(error)
 
         robot.safeMotorsOn(powerB * robot.motorDirection * direction, powerC * robot.motorDirection * direction) 
 

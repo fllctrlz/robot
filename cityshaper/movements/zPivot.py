@@ -37,7 +37,6 @@ def run(targetPower, motor, condition, exitSensor, val1, val2 = 0,
                 accelerating = False
 
         power = currentPower
-        # robot.debug(distanceB - distanceC)
 
         motor.on(power * robot.motorDirection * direction) 
 
