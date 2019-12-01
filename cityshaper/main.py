@@ -15,7 +15,7 @@ from util import constants
 
 import traceback
 
-from missions import craneyBoi, blockDelivery1, trafficJam, redCircle, showGyro, calibration, testoPesto
+from missions import craney, blockDelivery1, trafficJam, redCircle, showGyro, calibration, testoPesto
 
 # The Sound class creates a new instance that is assigned to the variable created.
 soundGenerator = Sound()
@@ -24,8 +24,8 @@ buttonListener = Button()
 
 selectedProgram = 0 
 # These are our missions
-missionNames = ["craneyBoi", "blockDelivery1", "trafficJam", "redCircle", "showGyro", "calibration", "testoPesto"]
-missions = [craneyBoi, blockDelivery1, trafficJam, redCircle, showGyro, calibration, testoPesto]
+missionNames = ["craney", "trafficJam", "blockDelivery1", "redCircle", "calibration", "showGyro"]
+missions = [craney, trafficJam, blockDelivery1, redCircle, calibration, showGyro]
 numMissions = len(missionNames)
 
 # buttonListener is called when the user presses the left button
