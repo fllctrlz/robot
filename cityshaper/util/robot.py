@@ -148,5 +148,12 @@ def beep():
 
 def sleep(seconds):
     '''special pause that exits when up button is pressed'''
+    resetStartTime()
     while not timeLocal(timer, seconds, 0):
         pass
+
+def checkAbort():
+    if Button().up:
+        raise Exception("button up was pressed")
+
+#TODO add loop function that has everything all loops shoudl have 
