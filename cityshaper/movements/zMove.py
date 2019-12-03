@@ -5,7 +5,7 @@ from util import robot
 from util import constants
 
 def run(targetPower, turn, turnDirection, condition, exitSensor, val1, val2 = 0, 
-    slowDownDistance = 10000, startPower = 30, endPower = 15, stop = True, kUp = constants.kUp):
+    slowDownDistance = 10000, startPower = 30, endPower = 15, stop = True, kUp = constants.kUp, kDown = constants.kDown):
 
     '''moves the robot forward or on an arc with error correction by finding
      the difference in the distance traveled by each motor multipled by the arc

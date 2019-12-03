@@ -23,7 +23,7 @@ def run():
     sleep(0.5) 
     squareUp.run(20, 2, 1)
     zMove.run(-50, 1, 1, distance, robot.motorB, 150)
-    gyroTurn.run(95, 80, 1)
+    gyroTurn.run(90, 80, 1)
     robot.motorD.on_for_degrees(speed=50, degrees=600)
     gyroTurn.run(180, 80, 1)
     zMove.run(-100, 1, 1, distance, robot.motorB, 2040)
