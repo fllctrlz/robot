@@ -67,8 +67,6 @@ soundGenerator.beep()
 # Read the calibrated values and test if the Gyro is drifting
 robot.init()
 
-craney.run()
-
 print(missionNames[selectedProgram])
 # Our Main Loop
 while True:
