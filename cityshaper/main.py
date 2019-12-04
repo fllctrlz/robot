@@ -55,6 +55,7 @@ def enter(pressed):
             soundGenerator.beep()
             robot.debug("EXCEPTION")
         robot.afterMission()
+        selectedProgram = selectedProgram + 1
         print(missionNames[selectedProgram])
 
 # Register the buttonListener
