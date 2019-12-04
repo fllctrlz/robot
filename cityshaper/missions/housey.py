@@ -11,9 +11,9 @@ from util.exitConditions import distance, time, light
 from movements import squareUp, pidLineFollower, zMove, gearLash, zPivot, followWall, gyroTurn
 
 def run ():
-    zMove.run(100, 1, 1, distance, robot.motorB, 1900, slowDownDistance = 890, kDown = 0.6)
+    zMove.run(100, 1, 1, distance, robot.motorB, 2100, slowDownDistance = 910, kDown = 0.6)
     gyroTurn.run(25, direction = -1)
     zMove.run(100, 1, 1, distance, robot.motorB, 1600)
-    zMove.run(25, 1, 1, distance, robot.motorB, 700)
+    zMove.run(25, 1, 1, distance, robot.motorB, 500)
     sleep(0.5)
-    zMove.run(-100, 1, 1, distance, robot.motorB, 4500, kUp = 15)
+    zMove.run(-100, 1, 1, distance, robot.motorB, 5300, kUp = 100, startPower = 40)

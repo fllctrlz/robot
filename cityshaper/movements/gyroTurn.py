@@ -23,10 +23,12 @@ def run(targetAngle, power=80, direction=1, adjust=30):
     if abs(robot.getAngle()) < targetAngle:
         while abs(robot.getAngle()) < targetAngle:
             robot.driveBase.on(5*direction, -5*direction)
+            robot.checkAbort()
         robot.driveBase.stop()
     else:
         while abs(robot.getAngle()) > targetAngle:
             robot.driveBase.on(-5*direction, 5*direction)
+            robot.checkAbort()
         robot.driveBase.stop()
 
     robot.debug("after error")
