@@ -11,13 +11,13 @@ from movements import squareUp, pidLineFollower, zMove, gearLash, zPivot, follow
 
 def run():
     zMove.run(-80, 1, 1, distance, robot.motorB, 800)
-    gyroTurn.run(20, direction = -1, adjust = 10)
-    zMove.run(-30, 1, 1, distance, robot.motorB, 450)
-    gyroTurn.run(20, 80, 1, adjust = 10)
+    gyroTurn.run(20, 60, direction = -1, adjust = 10)
+    zMove.run(-20, 1, 1, distance, robot.motorB, 450)
+    gyroTurn.run(20, 60, 1, adjust = 10)
     #drives forward and uses gyro sensor to adjust to be straight on with the box
     zMove.run(-15, 1, 1, distance, robot.motorB, 780)
     # pushes block forward and lowers crane arm
-    zMove.run(-5, 1, 1, distance, robot.motorB, 200)
+    #zMove.run(-5, 1, 1, distance, robot.motorB, 200)
     zMove.run(100, 1, 1, distance, robot.motorB, 750, startPower = 50)
     gyroTurn.run(90, 80, -1, adjust = 15)
     zMove.run(100, 1, 1, distance, robot.motorB, 1390, startPower = 60)

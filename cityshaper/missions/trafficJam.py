@@ -29,7 +29,7 @@ def run():
    pidLineFollower.run(-8, robot.BACK_RIGHT, 1, distance, robot.motorB, 400, kp = 0.09)
    pidLineFollower.run(-15, robot.BACK_RIGHT, 1, distance, robot.motorB, 300)
    zMove.run(-40, 1, 1, light, robot.BACK_LEFT, 75, 100)
-   sleep(0.25)
+   sleep(0.5)
    pidLineFollower.run(-25, robot.BACK_RIGHT, 1, distance, robot.motorB, 815)
    robot.soundGenerator.beep()
    zMove.run(-50, 1, 1, distance, robot.motorB, 80)

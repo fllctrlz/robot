@@ -10,6 +10,7 @@ from ev3dev2.sensor.lego import ColorSensor, GyroSensor
 from ev3dev2.sensor import INPUT_1, INPUT_2, INPUT_3, INPUT_4
 from ev3dev2.button import Button
 from ev3dev2.sound import Sound
+from ev3dev2.display import Display
 
 from missions import calibration
 
@@ -30,6 +31,7 @@ motorC = LargeMotor(OUTPUT_C)
 motorD = LargeMotor(OUTPUT_D)
 
 soundGenerator = Sound()
+lcd = Display()
 
 # Re-export the timer from the time module
 timer = time
@@ -53,6 +55,14 @@ calibrationMax = []
 # Records the current angle when resetAngle is called
 # We use it to make Gyro movements relative to the startAngle
 startAngle = 0
+
+def displayOnBrick(text):
+    #debug(fonts.available())
+    lcd.text_pixels(text, font='helvB'+str(24))
+    updateDisplay()
+
+def updateDisplay():
+    lcd.update()
 
 def resetAngle():
     '''Reset the startAngle so the angle returned by getAngle is relative to the beginning of the turn'''
@@ -135,11 +145,11 @@ def testGyroDrift():
     sleep(1)
      
     if abs(firstRead - getAngle()) > 1:
-        print("gyro is drifting")
+        displayOnBrick("gyro is drifting")
         soundGenerator.beep()
         raise Exception ("gyro is drifting")
         sleep(2)
-    print ("No drift")
+    displayOnBrick("No drift")
      
 def beep():
     '''beeps'''
