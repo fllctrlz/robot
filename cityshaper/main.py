@@ -8,7 +8,6 @@ from sys import stderr
 from time import sleep
 
 from ev3dev2.button import Button
-from ev3dev2.sound import Sound
 
 from util import robot
 from util import constants
@@ -17,8 +16,6 @@ import traceback
 
 from missions import craney, blockDelivery1, trafficJam, redCircle, showGyro, calibration, testoPesto, housey
 
-# The Sound class creates a new instance that is assigned to the variable created.
-soundGenerator = Sound()
 # buttonListener generates an event when the user presses the button
 buttonListener = Button()
 
@@ -46,13 +43,13 @@ def right(pressed):
 def enter(pressed):
     global selectedProgram
     if pressed:
-        soundGenerator.beep()
+        robot.beep()
         try:
             missions[selectedProgram].run()
             if selectedProgram < numMissions-1:
                 selectedProgram = selectedProgram + 1
         except:
-            soundGenerator.beep()
+            robot.beep()
             robot.debug("EXCEPTION")
         robot.afterMission()
         selectedProgram = selectedProgram + 1
@@ -63,10 +60,9 @@ buttonListener.on_left = left
 buttonListener.on_right = right
 buttonListener.on_enter = enter
 
-soundGenerator.beep()
-
 # Read the calibrated values and test if the Gyro is drifting
 robot.init()
+robot.beep()
 
 print(missionNames[selectedProgram])
 # Our Main Loop
