@@ -4,7 +4,7 @@ import time
 
 from util import robot
 
-def run(targetAngle, power=80, direction=1, adjust=30):
+def run(targetAngle, power=70, direction=1, adjust=30, slowPower=5):
     '''turns the robot using gyro sensor. Compares current angle with target angle
     then turns until target angle is reached. Since we use a very high power,
     we will turn to a value less than our desired angle, and turn slowly towards our target angle.
@@ -22,12 +22,12 @@ def run(targetAngle, power=80, direction=1, adjust=30):
     
     if abs(robot.getAngle()) < targetAngle:
         while abs(robot.getAngle()) < targetAngle:
-            robot.driveBase.on(5*direction, -5*direction)
+            robot.driveBase.on(slowPower*direction, -slowPower*direction)
             robot.checkAbort()
         robot.driveBase.stop()
     else:
         while abs(robot.getAngle()) > targetAngle:
-            robot.driveBase.on(-5*direction, 5*direction)
+            robot.driveBase.on(-slowPower*direction, slowPower*direction)
             robot.checkAbort()
         robot.driveBase.stop()
 
