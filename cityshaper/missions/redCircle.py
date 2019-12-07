@@ -28,5 +28,5 @@ def run():
     gyroTurn.run(180, 80, 1)
     zMove.run(-100, 1, 1, distance, robot.motorB, 2040)
     sleep(1)
-    zPivot.run (50,robot.motorB, distance, robot.motorB, 200, robot.motorB)
+    zPivot.run(50,robot.motorB, distance, robot.motorB, 200, robot.motorB)
     

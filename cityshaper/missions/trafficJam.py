@@ -22,7 +22,7 @@ def run():
    #Swing Mission
    zMove.run(50, 1, 1, distance, robot.motorB, 350)
    gyroTurn.run(50, 80, 1)
-   zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 80, 100)
+   zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 80, 100)   
    zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 0, 15)
    zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 80, 100)
    sleep(0.25)
