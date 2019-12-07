@@ -10,16 +10,15 @@ from util.exitConditions import distance, time, light
 from movements import squareUp, pidLineFollower, zMove, gearLash, zPivot, followWall,gyroTurn
 
 def run():
-    zMove.run(-80, 1, 1, distance, robot.motorB, 800)
-    gyroTurn.run(20, 60, direction = -1, adjust = 10)
+    zMove.run(-80, 1, 1, distance, robot.motorB, 950)
+    gyroTurn.run(20, 60, direction = -1, adjust = 15)
     zMove.run(-20, 1, 1, distance, robot.motorB, 450)
-    gyroTurn.run(20, 60, 1, adjust = 10)
+    gyroTurn.run(23, 60, 1, adjust = 15)
     #drives forward and uses gyro sensor to adjust to be straight on with the box
-    zMove.run(-15, 1, 1, distance, robot.motorB, 780)
+    zMove.run(-15, 1, 1, distance, robot.motorB, 30)
     # pushes block forward and lowers crane arm
-    #zMove.run(-5, 1, 1, distance, robot.motorB, 200)
+    zMove.run(-5, 1, 1, distance, robot.motorB, 700)
     zMove.run(100, 1, 1, distance, robot.motorB, 750, startPower = 50)
     gyroTurn.run(90, 80, -1, adjust = 15)
-    zMove.run(100, 1, 1, distance, robot.motorB, 1390, startPower = 60)
+    zMove.run(100, 1, 1, distance, robot.motorB, 1800, startPower = 60)
     #drives back and turns into base
-

@@ -35,12 +35,12 @@ def run():
    zMove.run(-50, 1, 1, distance, robot.motorB, 80)
    zMove.run(20, 1, 1, distance, robot.motorB, 100)
    #Elevator Mission
-   gyroTurn.run(80, 80, 1)
+   gyroTurn.run(82, 80, 1)
    robot.motorD.on_for_degrees(speed=45, degrees=440)
    zMove.run(-50, 1, 1, distance, robot.motorB, 390)
    zMove.run(-25, 1, 1, light, robot.BACK_RIGHT,75, 100)
    # gyroTurn.run(20, 80, 1)
-   zMove.run(-50, 1, 1, distance, robot.motorB, 110)
+   zMove.run(-50, 1, 1, distance, robot.motorB, 90)
    robot.motorD.on_for_degrees(speed=60, degrees=-460)
    #Construction Mission
    # gyroTurn.run(60, 80, -1)

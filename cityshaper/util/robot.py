@@ -144,7 +144,7 @@ def testGyroDrift():
     print("checking for gyro drift")
     sleep(1)
      
-    if abs(firstRead - getAngle()) > 1:
+    if abs(firstRead - getAngle()) > 0.2:
         displayOnBrick("gyro is drifting")
         soundGenerator.beep()
         raise Exception ("gyro is drifting")
