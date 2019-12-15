@@ -27,3 +27,6 @@ def run():
         str(int(robot.calibratedValue(3))))
         print(text)
         sleep(1)
+
+    def run():
+        Zpivot.run()

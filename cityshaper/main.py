@@ -51,9 +51,10 @@ def enter(pressed):
             missions[selectedProgram].run()
             if selectedProgram < numMissions-1:
                 selectedProgram = selectedProgram + 1
-        except:
+        except  Exception as e:
             soundGenerator.beep()
             robot.debug("EXCEPTION")
+            robot.debug(e)
         robot.afterMission()
         selectedProgram = selectedProgram + 1
         print(missionNames[selectedProgram])

@@ -5,7 +5,7 @@ from time import sleep
 from ev3dev2.sound import Sound
 
 from util import robot
-from util import constants
+#from util import constants
 from util.exitConditions import distance, time, light
 
 from movements import squareUp, pidLineFollower, zMove, gearLash, zPivot, followWall, gyroTurn
@@ -20,14 +20,18 @@ def run():
    robot.motorD.on_for_degrees(speed=30, degrees=165)
    zPivot.run(-70, robot.motorB, time, robot.timer, 1.8)
    #Swing Mission
-   zMove.run(50, 1, 1, distance, robot.motorB, 350)
-   gyroTurn.run(50, 80, 1)
-   zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 80, 100)   
-   zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 0, 15)
-   zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 80, 100)
+   zMove.run(50, 1, 1, light, robot.FRONT, 80, 100)
+   zMove.run(-100, 1, 1, distance, robot.motorB, 110)
+   sleep(1)
+   zPivot.run(10, robot.motorB, light, robot.BACK_RIGHT, 80,100)
+   zPivot.run(20, robot.motorB, light, robot.BACK_RIGHT, 0, 20)
+   #zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 80, 100)
+   #zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 0, 15)
+   #zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 80, 100)
    sleep(0.25)
-   pidLineFollower.run(-8, robot.BACK_RIGHT, 1, distance, robot.motorB, 400, kp = 0.09)
-   pidLineFollower.run(-15, robot.BACK_RIGHT, 1, distance, robot.motorB, 300)
+   pidLineFollower.run(-8, robot.BACK_RIGHT, 1, distance, robot.motorB, 1000, kp = 0.09)
+   sleep(2)
+   pidLineFollower.run(-20, robot.BACK_RIGHT, 1, distance, robot.motorB, 500)
    zMove.run(-40, 1, 1, light, robot.BACK_LEFT, 75, 100)
    sleep(0.25)
    pidLineFollower.run(-25, robot.BACK_RIGHT, 1, distance, robot.motorB, 815)
@@ -37,7 +41,7 @@ def run():
    #Elevator Mission
    gyroTurn.run(80, 80, 1)
    robot.motorD.on_for_degrees(speed=45, degrees=440)
-   zMove.run(-50, 1, 1, distance, robot.motorB, 390)
+   zMove.run(-50, 1, 1, distance, robot.motorB, 450)
    zMove.run(-25, 1, 1, light, robot.BACK_RIGHT,75, 100)
    # gyroTurn.run(20, 80, 1)
    zMove.run(-50, 1, 1, distance, robot.motorB, 110)
@@ -58,3 +62,4 @@ def run():
    zMove.run(100, 1, 1, distance, robot.motorB, 1000, startPower=50, kUp=30)
    gyroTurn.run(46, 30, -1, adjust = 38)
    zMove.run(100, 1, 1, distance, robot.motorB, 4300, startPower=50, kUp=50)
+   
