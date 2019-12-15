@@ -20,8 +20,8 @@ def run():
    robot.motorD.on_for_degrees(speed=30, degrees=165)
    zPivot.run(-70, robot.motorB, time, robot.timer, 1.8)
    #Swing Mission
-   zMove.run(50, 1, 1, distance, robot.motorB, 350)
-   gyroTurn.run(50, 80, 1)
+   zMove.run(50, 1, 1, distance, robot.motorB, 350) #250 distance
+   gyroTurn.run(50, 80, 1) #65 targetAngle
    zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 80, 100)
    zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 0, 15)
    zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 80, 100)
