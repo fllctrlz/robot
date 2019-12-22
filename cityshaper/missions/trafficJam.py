@@ -25,9 +25,13 @@ def run():
    zPivot.run(15, robot.motorB, light, robot.BACK_RIGHT, 0, 20)
    zPivot.run(15, robot.motorB, light, robot.BACK_RIGHT, 80, 100)
    pidLineFollower.run(-8, robot.BACK_RIGHT, 1, distance, robot.motorB, 300, kp = 0.13)
-   pidLineFollower.run(-25, robot.BACK_RIGHT, 1, distance, robot.motorB, 900)
-   pidLineFollower.run(-15, robot.BACK_RIGHT, 1, light, robot.BACK_LEFT, 0, 30)
-   zMove.run(-30, 1, 1, light, robot.BACK_LEFT, 80, 100)
+   pidLineFollower.run(-25, robot.BACK_RIGHT, 1, distance, robot.motorB, 760)
+   soundGenerator.beep()
+   pidLineFollower.run(-15, robot.BACK_RIGHT, 1, light, robot.BACK_LEFT, 0, 20)
+   soundGenerator.beep()
+   sleep(0.25)
+   zMove.run(-15, 1, 1, light, robot.BACK_LEFT, 75, 100)
+   sleep(0.25)
    pidLineFollower.run(-25, robot.BACK_RIGHT, 1, distance, robot.motorB, 350)
 
 
