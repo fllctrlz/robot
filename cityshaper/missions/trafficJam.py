@@ -17,15 +17,18 @@ def run():
    #Traffic Jam Mission
    zMove.run(-50, 1, 1, distance, robot.motorB, 1150)
    robot.motorD.on_for_degrees(speed=30, degrees=165)
-   zPivot.run(-70, robot.motorB, time, robot.timer, 1.8)
+   zPivot.run(-70, robot.motorB, time, robot.timer, 1.5)
    #Swing Mission
    zMove.run(50, 1, 1, light, robot.FRONT, 80, 100)
-   zMove.run(-100, 1, 1, distance, robot.motorB, 110)
-   zPivot.run(10, robot.motorB, light, robot.BACK_LEFT, 80, 100)
+   zMove.run(100, 1, 1, distance, robot.motorB, 110)
+   zPivot.run(10, robot.motorB, light, robot.BACK_RIGHT, 80, 100)
    zPivot.run(15, robot.motorB, light, robot.BACK_RIGHT, 0, 20)
    zPivot.run(15, robot.motorB, light, robot.BACK_RIGHT, 80, 100)
-   pidLineFollower.run(-8, robot.BACK_RIGHT, 1, distance, robot.motorB, 1000, kp = 0.13)
-   
+   pidLineFollower.run(-8, robot.BACK_RIGHT, 1, distance, robot.motorB, 300, kp = 0.13)
+   pidLineFollower.run(-25, robot.BACK_RIGHT, 1, distance, robot.motorB, 900)
+   pidLineFollower.run(-15, robot.BACK_RIGHT, 1, light, robot.BACK_LEFT, 0, 30)
+   zMove.run(-30, 1, 1, light, robot.BACK_LEFT, 80, 100)
+   pidLineFollower.run(-25, robot.BACK_RIGHT, 1, distance, robot.motorB, 350)
 
 
    
