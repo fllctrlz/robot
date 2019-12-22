@@ -15,7 +15,7 @@ from util import constants
 
 import traceback
 
-from missions import craney, blockDelivery1, trafficJam, redCircle, showGyro, calibration, testoPesto, housey
+from missions import craney, blockDelivery1, trafficJam, redCircle, showGyro, calibration, testoPesto, housey, tree
 
 # The Sound class creates a new instance that is assigned to the variable created.
 soundGenerator = Sound()
@@ -24,8 +24,8 @@ buttonListener = Button()
 
 selectedProgram = 0 
 # These are our missions
-missionNames = ["craney", "trafficJam", "blockDelivery1", "housey", "redCircle", "calibration", "showGyro"]
-missions = [craney, trafficJam, blockDelivery1, housey, redCircle, calibration, showGyro]
+missionNames = ["craney", "trafficJam", "tree", "blockDelivery1", "housey", "redCircle", "calibration", "showGyro"]
+missions = [craney, trafficJam, tree, blockDelivery1, housey, redCircle, calibration, showGyro]
 numMissions = len(missionNames)
 
 # buttonListener is called when the user presses the left button
@@ -51,9 +51,10 @@ def enter(pressed):
             missions[selectedProgram].run()
             if selectedProgram < numMissions-1:
                 selectedProgram = selectedProgram + 1
-        except:
+        except  Exception as e:
             soundGenerator.beep()
             robot.debug("EXCEPTION")
+            robot.debug(e)
         robot.afterMission()
         selectedProgram = selectedProgram + 1
         print(missionNames[selectedProgram])

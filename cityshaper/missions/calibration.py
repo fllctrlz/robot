@@ -61,6 +61,6 @@ def readValues():
     max = [float(line.rstrip('\n')) for line in file]
     file.close() 
     
-    return min, max
+    return min, max 
 
  
