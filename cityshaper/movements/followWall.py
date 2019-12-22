@@ -6,7 +6,7 @@ from util import constants
 
 
 def run(powerB, powerC, condition, exitSensor, val1, val2=0, stop=True):
-    ''''controls each motor power separately, used for driving againsty the wall'''
+    ''''Controls each motor power separately, used for driving against the wall. We arc against the wall and drive into it in order to have a reference point that is stationary and effective.'''
     robot.resetStartTime()
     robot.resetMotors()
     robot.safeMotorsOn(powerB, powerC)

@@ -153,7 +153,6 @@ def sleep(seconds):
         pass
 
 def checkAbort():
+    '''check if the up button is pressed, if it is, raise an exception and exit the program'''
     if Button().up:
         raise Exception("button up was pressed")
-
-#TODO add loop function that has everything all loops shoudl have 
