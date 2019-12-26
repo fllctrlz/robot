@@ -31,11 +31,31 @@ def run():
    soundGenerator.beep()
    sleep(0.25)
    zMove.run(-15, 1, 1, light, robot.BACK_LEFT, 75, 100)
+   soundGenerator.beep()
    sleep(0.25)
-   pidLineFollower.run(-25, robot.BACK_RIGHT, 1, distance, robot.motorB, 350)
+   pidLineFollower.run(-25, robot.BACK_RIGHT, 1, distance, robot.motorB, 950)
+   #Safety Factor Mission
+   zMove.run(60, 1, 1, distance, robot.motorB, 550)
+   gyroTurn.run(90, 50, 1, 10)
+   zMove.run(-80, 1, 1, distance, robot.motorB, 450)
+   zMove.run(-30, 1, 1, light, robot.FRONT, 0, 15)
+   zMove.run(40, 1, 1, distance, robot.motorB, 125)
+   soundGenerator.beep() 
+   sleep(0.25)
+   gyroTurn.run(90, 40, 1, 40)
+   sleep(1)
+   zMove.run(35, 1, 1, distance, robot.motorB, 210)
+   zMove.run(35, 1, 1, time, robot.timer, 3.25, startPower=35)
+   #Elevator Mission
+   zMove.run(-60, 1, 1, distance, robot.motorB, 200)
+   gyroTurn.run(90, 60, -1, 30)
+   robot.motorD.on_for_degrees(speed=45, degrees=460)
+   zMove.run(-40, 1, 1, distance, robot.motorB, 150)
+   robot.motorD.on_for_degrees(speed=45, degrees=-525)   
+   zMove.run(60, 1, 1, distance, robot.motorB, 500)
+   gyroTurn.run(90, 55, 1, 25)
+   zMove.run(-100, 1, 1, distance, robot.motorB, 5500, startPower=90, kUp=150, kDown=0)
 
-
-   
 
 
 

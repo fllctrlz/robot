@@ -2,7 +2,9 @@
 
 import time
 
+from util import constants
 from util import robot
+from util.exitConditions import distance, time, light
 
 def run(targetAngle, power=80, direction=1, adjust=30):
     '''turns the robot using gyro sensor. Compares current angle with target angle
@@ -13,8 +15,9 @@ def run(targetAngle, power=80, direction=1, adjust=30):
     power = power * direction
     # Moves the motor at a high power while the gyro sensor angle reading is less than the target angle subtracted from a specified value.
     while abs(robot.getAngle()) < targetAngle - adjust:
-        robot.driveBase.on(power, -power)
-        robot.checkAbort()
+        # try:
+            robot.driveBase.on(power, -power)
+            robot.checkAbort()
     # Prints the error between the target angle and the gyro sensor angle reading to the VSCode output window for debugging purposes.
     robot.driveBase.stop()
     robot.sleep(0.1)
