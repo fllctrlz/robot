@@ -69,7 +69,6 @@ soundGenerator.beep()
 # Read the calibrated values and test if the Gyro is drifting
 
 robot.init()
-trafficJam.run()
 
 print(missionNames[selectedProgram])
 # Our Main Loop

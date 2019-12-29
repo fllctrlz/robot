@@ -15,8 +15,11 @@ soundGenerator = Sound()
 
 def run():
    #Traffic Jam Mission
-   zMove.run(-50, 1, 1, distance, robot.motorB, 1150)
-   robot.motorD.on_for_degrees(speed=30, degrees=165)
+   zMove.run(-50, 1, 1, distance, robot.motorB, 550)
+   zMove.run(-25, 1, 1, light, robot.BACK_RIGHT, 2, 25)
+   sleep(0.25)
+   zMove.run(-50, 1, 1, distance, robot.motorB, 400)
+   robot.motorD.on_for_degrees(speed=30, degrees=135)
    zPivot.run(-70, robot.motorB, time, robot.timer, 1.5)
    #Swing Mission
    zMove.run(50, 1, 1, light, robot.FRONT, 80, 100)
@@ -25,11 +28,12 @@ def run():
    zPivot.run(15, robot.motorB, light, robot.BACK_RIGHT, 0, 20)
    zPivot.run(15, robot.motorB, light, robot.BACK_RIGHT, 80, 100)
    pidLineFollower.run(-8, robot.BACK_RIGHT, 1, distance, robot.motorB, 300, kp = 0.13)
-   pidLineFollower.run(-25, robot.BACK_RIGHT, 1, distance, robot.motorB, 760)
+   pidLineFollower.run(-25, robot.BACK_RIGHT, 1, distance, robot.motorB, 800)
    soundGenerator.beep()
    pidLineFollower.run(-15, robot.BACK_RIGHT, 1, light, robot.BACK_LEFT, 0, 20)
    soundGenerator.beep()
    sleep(0.25)
+   pidLineFollower.run(-15, robot.BACK_RIGHT, 1, distance, robot.motorB, 250)
    zMove.run(-15, 1, 1, light, robot.BACK_LEFT, 75, 100)
    soundGenerator.beep()
    sleep(0.25)
@@ -43,18 +47,18 @@ def run():
    soundGenerator.beep() 
    sleep(0.25)
    gyroTurn.run(90, 40, 1, 40)
-   sleep(1)
+   sleep(0.25)
    zMove.run(35, 1, 1, distance, robot.motorB, 210)
    zMove.run(35, 1, 1, time, robot.timer, 3.25, startPower=35)
    #Elevator Mission
    zMove.run(-60, 1, 1, distance, robot.motorB, 200)
    gyroTurn.run(90, 60, -1, 30)
    robot.motorD.on_for_degrees(speed=45, degrees=460)
-   zMove.run(-40, 1, 1, distance, robot.motorB, 150)
+   zMove.run(-40, 1, 1, distance, robot.motorB, 120)
    robot.motorD.on_for_degrees(speed=45, degrees=-525)   
    zMove.run(60, 1, 1, distance, robot.motorB, 500)
    gyroTurn.run(90, 55, 1, 25)
-   zMove.run(-100, 1, 1, distance, robot.motorB, 5500, startPower=90, kUp=150, kDown=0)
+   zMove.run(-100, 1, 1, distance, robot.motorB, 4400, startPower=90, kUp=150, kDown=0)
 
 
 
