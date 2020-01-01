@@ -24,8 +24,8 @@ buttonListener = Button()
 
 selectedProgram = 0 
 # These are our missions
-missionNames = ["craney", "trafficJam", "tree", "blockDelivery1", "housey", "redCircle", "calibration", "showGyro"]
-missions = [craney, trafficJam, tree, blockDelivery1, housey, redCircle, calibration, showGyro]
+missionNames = ["craney", "trafficJam", "tree", "blockDelivery1", "redCircle", "calibration", "showGyro"]
+missions = [craney, trafficJam, tree, blockDelivery1, redCircle, calibration, showGyro]
 numMissions = len(missionNames)
 
 # buttonListener is called when the user presses the left button
@@ -55,8 +55,8 @@ def enter(pressed):
             soundGenerator.beep()
             robot.debug("EXCEPTION")
             robot.debug(e)
-        robot.afterMission()
-        selectedProgram = selectedProgram + 1
+            selectedProgram = selectedProgram + 1
+        robot.afterMission() 
         print(missionNames[selectedProgram])
 
 # Register the buttonListener
