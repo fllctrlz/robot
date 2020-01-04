@@ -18,6 +18,9 @@ def run():
     #pidLineFollower.run(20, robot.FRONT_LEFT, 1, distance, robot.motorB, 500)
     #pidLineFollower.run(-20, robot.BACK_LEFT, 1, time, robot.timer, 15)
     #pidLineFollower.run(20, robot.FRONT_LEFT, -1, light, robot.FRONT_RIGHT, 90, 100)
+    #gyroTurn.run(90, [-1, 0], 50)
+    #gyroTurn.run(180, [1, -1], 40, 40)
+    #gyroTurn.run(90, [1, -1], 50)
     
     def light():
         text = (str(int(robot.calibratedValue(0))) + " " +
@@ -26,6 +29,5 @@ def run():
         str(int(robot.calibratedValue(3))))
         print(text)
         sleep(1)
-
     def run():
-        Zpivot.run()
+        zPivot.run()

@@ -69,6 +69,7 @@ soundGenerator.beep()
 # Read the calibrated values and test if the Gyro is drifting
 
 robot.init()
+testoPesto.run()
 
 print(missionNames[selectedProgram])
 # Our Main Loop
