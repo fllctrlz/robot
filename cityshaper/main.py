@@ -15,7 +15,7 @@ from util import constants
 
 import traceback
 
-from missions import craney, blockDelivery1, trafficJam, redCircle, showGyro, calibration, testoPesto, tree
+from missions import craney, blockDelivery1, trafficJam, redCircle, showGyro, cleanTires, calibration, testoPesto, tree
 
 # The Sound class creates a new instance that is assigned to the variable created.
 soundGenerator = Sound()
@@ -24,8 +24,8 @@ buttonListener = Button()
 
 selectedProgram = 0 
 # These are our missions
-missionNames = ["craney", "trafficJam", "tree", "blockDelivery1", "redCircle", "calibration", "showGyro"]
-missions = [craney, trafficJam, tree, blockDelivery1, redCircle, calibration, showGyro]
+missionNames = ["craney", "trafficJam", "tree", "blockDelivery1", "redCircle", "calibration", "cleanTires", "showGyro"]
+missions = [craney, trafficJam, tree, blockDelivery1, redCircle, calibration, cleanTires, showGyro]
 numMissions = len(missionNames)
 
 # buttonListener is called when the user presses the left button
@@ -67,7 +67,6 @@ buttonListener.on_enter = enter
 soundGenerator.beep()
 
 # Read the calibrated values and test if the Gyro is drifting
-
 robot.init()
 
 print(missionNames[selectedProgram])

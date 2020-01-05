@@ -12,5 +12,5 @@ def run():
     zMove.run(80, 1, 1, distance, robot.motorB, 1250, 0, 950)
     zMove.run(-80, 1, 1, distance, robot.motorB, 350)
     # gyroTurn.run(90, 60, -1)
-    gyroTurn.run(90, [-1, 51], 60)
+    gyroTurn.run(90, [-1, 1], 60)
     zMove.run(-90, 1, 1, distance, robot.motorB, 1000)
