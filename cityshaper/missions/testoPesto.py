@@ -20,7 +20,7 @@ def run():
     #pidLineFollower.run(20, robot.FRONT_LEFT, -1, light, robot.FRONT_RIGHT, 90, 100)
     #gyroTurn.run(90, [-1, 0], 50)
     #gyroTurn.run(180, [1, -1], 40, 40)
-    #gyroTurn.run(90, [1, -1], 50)
+    #gyroTurn.run(31, [1, -1], 20, 10)
     
     def light():
         text = (str(int(robot.calibratedValue(0))) + " " +

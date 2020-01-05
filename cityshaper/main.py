@@ -15,7 +15,7 @@ from util import constants
 
 import traceback
 
-from missions import craney, blockDelivery1, trafficJam, redCircle, showGyro, calibration, testoPesto, housey, tree
+from missions import craney, blockDelivery1, trafficJam, redCircle, showGyro, calibration, testoPesto, tree
 
 # The Sound class creates a new instance that is assigned to the variable created.
 soundGenerator = Sound()
@@ -69,7 +69,6 @@ soundGenerator.beep()
 # Read the calibrated values and test if the Gyro is drifting
 
 robot.init()
-testoPesto.run()
 
 print(missionNames[selectedProgram])
 # Our Main Loop
