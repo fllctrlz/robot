@@ -6,7 +6,7 @@ from util import constants
 from util import robot
 from util.exitConditions import distance, time, light
 
-def run(targetAngle, motor = [1,-1], power = 80, adjust = 30):
+def run(targetAngle, motor = [1,-1], power = 80, adjust = 30, slowSpeed = 4):
     '''turns the robot using gyro sensor. Compares current angle with target angle
     then turns until target angle is reached. Since we use a very high power,
     we will turn to a value less than our desired angle, and turn slowly towards our target angle.
@@ -26,13 +26,13 @@ def run(targetAngle, motor = [1,-1], power = 80, adjust = 30):
     if abs(robot.getAngle()) < targetAngle:
         # Moves the motors in one direction at a low power while the gyro sensor angle reading is less than the target angle.
         while abs(robot.getAngle()) < targetAngle:
-            robot.driveBase.on(5*motor[0], 5*motor[1])
+            robot.driveBase.on(slowSpeed*motor[0], slowSpeed*motor[1])
             robot.checkAbort()
         robot.driveBase.stop()
     else:
         # Moves the motors in the opposite direction at a low power while the gyro sensor angle reading is less than the target angle.
         while abs(robot.getAngle()) > targetAngle:
-            robot.driveBase.on(-5*motor[0], -5*motor[1])
+            robot.driveBase.on(-slowSpeed*motor[0], -slowSpeed*motor[1])
             robot.checkAbort()
         robot.driveBase.stop()
     robot.debug(targetAngle-abs(robot.getAngle()))

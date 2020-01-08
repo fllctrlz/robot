@@ -45,17 +45,23 @@ def run():
    #Safety Factor Mission
    zMove.run(60, 1, 1, distance, robot.motorB, 550)
    #gyroTurn.run(90, 50, 1, 10)
-   gyroTurn.run(90, [1, -1], 30, 20)   
+   
+   #gyroTurn.run(90, [0, -1], 20, 20) 
+   gyroTurn.run(90, [0, -1], adjust = 40) 
+
    zMove.run(-80, 1, 1, distance, robot.motorB, 450)
    zMove.run(-30, 1, 1, light, robot.FRONT, 0, 15)
-   zMove.run(25, 1, 1, distance, robot.motorB, 55)
+   zMove.run(-25, 1, 1, distance, robot.motorB, 20)
    soundGenerator.beep() 
    sleep(0.25)
    #gyroTurn.run(90, 40, 1, 40)
-   gyroTurn.run(90, [1, -1], 30, 40)
+
+   #gyroTurn.run(90, [1, 0], 20, 40)
+   gyroTurn.run(90, [1, 0], adjust = 40)
+
    sleep(0.25)
    zMove.run(35, 1, 1, distance, robot.motorB, 210)
-   zMove.run(35, 1, 1, time, robot.timer, 3.25, startPower=35)
+   zMove.run(20, 1, 1, time, robot.timer, 3.75, startPower=20)
    #Elevator Mission
    zMove.run(-60, 1, 1, distance, robot.motorB, 200)
    robot.motorD.on_for_degrees(speed=45, degrees=460)

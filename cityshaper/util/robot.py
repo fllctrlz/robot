@@ -156,3 +156,9 @@ def checkAbort():
     '''check if the up button is pressed, if it is, raise an exception and exit the program'''
     if Button().up:
         raise Exception("button up was pressed")
+
+def showGyroDrift():
+    debug(getAngle())
+    sleep(3)
+    debug(getAngle())
+
