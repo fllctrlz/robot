@@ -15,7 +15,7 @@ soundGenerator = Sound()
 
 def run():
    #Traffic Jam Mission
-   zMove.run(-50, 1, 1, distance, robot.motorB, 550)
+   zMove.run(-50, 1, 1, distance, robot.motorB, 550, startPower=15)
    zMove.run(-15, 1, 1, light, robot.BACK_RIGHT, 2, 25, stop = False)
    sleep(0.25)
    zMove.run(-30, 1, 1, distance, robot.motorB, 360)

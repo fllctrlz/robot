@@ -20,6 +20,6 @@ def run():
     zMove.run(-100, 1, 1, distance, robot.motorB, 750, startPower = 50)
     # gyroTurn.run(90, 60, -1, adjust = 15)
     gyroTurn.run(90, [-1, 1], 60)
-    zMove.run(-100, 1, 1, distance, robot.motorB, 1050, startPower = 60)
+    zMove.run(-100, 1, 1, distance, robot.motorB, 1000, startPower = 60)
     #drives back and turns into base
 

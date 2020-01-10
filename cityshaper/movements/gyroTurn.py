@@ -6,7 +6,7 @@ from util import constants
 from util import robot
 from util.exitConditions import distance, time, light
 
-def run(targetAngle, motor = [1,-1], power = 80, adjust = 30, slowSpeed = 4):
+def run(targetAngle, motor = [1,-1], power = 80, adjust = 30, slowSpeed = 5):
     '''turns the robot using gyro sensor. Compares current angle with target angle
     then turns until target angle is reached. Since we use a very high power,
     we will turn to a value less than our desired angle, and turn slowly towards our target angle.
