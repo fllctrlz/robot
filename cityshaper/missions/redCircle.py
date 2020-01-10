@@ -27,7 +27,7 @@ def run():
     gyroTurn.run(90, [1, -1], 40, adjust = 15)
     robot.motorD.on_for_degrees(speed=50, degrees=625)
     #gyroTurn.run(180, 80, 1)
-    gyroTurn.run(177, [1, -1], 30, 40)
+    gyroTurn.run(178, [1, -1], 30, 40)
     zMove.run(-100, 1, 1, distance, robot.motorB, 2040)
     sleep(1)
     zPivot.run(50,robot.motorB, distance, robot.motorB, 200, robot.motorB)
